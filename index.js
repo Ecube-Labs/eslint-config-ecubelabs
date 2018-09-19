@@ -32,8 +32,15 @@ module.exports = {
             classes: false,
             variables: true,
         }],
-        'no-restricted-syntax': ["error", "WithStatement"],
+        'no-restricted-syntax': ['error', 'WithStatement'],
         'newline-per-chained-call': 0,
+        'no-unused-vars': [
+            'error',
+            {
+                'varsIgnorePattern': '^_',
+                'argsIgnorePattern': '^_',
+            },
+        ]
     },
     plugins: ['import'],
 };
