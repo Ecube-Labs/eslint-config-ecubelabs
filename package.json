@@ -1,6 +1,6 @@
 {
-  "name": "@ecubelabs/eslint-config-ecubelabs",
-  "version": "1.0.0",
+  "name": "eslint-config-ecubelabs",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,9 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/Ecube-Labs/eslint-config-ecubelabs.git"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Ecube-Labs/eslint-config-ecubelabs/issues"
+  },
+  "peerDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0"
   }
 }
