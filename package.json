@@ -14,5 +14,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Ecube-Labs/eslint-config-ecubelabs/issues"
+  },
+  "peerDependencies": {
+    "eslint": "^4.19.1 || ^5.3.0",
+    "eslint-config-airbnb-base": "^12.1.0"
   }
 }
