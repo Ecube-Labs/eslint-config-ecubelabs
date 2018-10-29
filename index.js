@@ -10,7 +10,7 @@ module.exports = {
         mocha: true,
     },
     rules: {
-        // maxlength: 0, // 0으로 설정하면 에러 검출 X
+        'max-len': ['error', { code: 120, ignoreComments: true }],
         'no-console': 'off', // 콘솔을 사용하기 위한 설정
         'indent': ['error', 4, {'SwitchCase': 1}],
         'global-require': 0,
