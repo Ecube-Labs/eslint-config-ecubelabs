@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ecubelabs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,8 @@
   },
   "peerDependencies": {
     "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0"
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.14.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
