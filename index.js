@@ -11,7 +11,16 @@ module.exports = {
     },
     rules: {
         'max-len': ['error', { code: 120, ignoreComments: true }],
-        'object-curly-newline': ['error', { ObjectPattern: { minProperties: 6 } }],
+        // see https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/style.js
+        'object-curly-newline': [
+            'error',
+            {
+                ObjectExpression: { minProperties: 6, multiline: true, consistent: true },
+                ObjectPattern: { minProperties: 6, multiline: true, consistent: true },
+                ImportDeclaration: { minProperties: 6, multiline: true, consistent: true },
+                ExportDeclaration: { minProperties: 6, multiline: true, consistent: true },
+            },
+        ],
         indent: ['error', 4, { SwitchCase: 1 }],
         'global-require': 0,
         'no-bitwise': 0,
