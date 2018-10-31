@@ -11,8 +11,8 @@ module.exports = {
     },
     rules: {
         'max-len': ['error', { code: 120, ignoreComments: true }],
-        'no-console': 'off', // 콘솔을 사용하기 위한 설정
-        'indent': ['error', 4, {'SwitchCase': 1}],
+        'object-curly-newline': ['error', { ObjectPattern: { minProperties: 6 } }],
+        indent: ['error', 4, { SwitchCase: 1 }],
         'global-require': 0,
         'no-bitwise': 0,
         'no-underscore-dangle': 0,
@@ -27,20 +27,23 @@ module.exports = {
         'import/no-dynamic-require': 0,
         'guard-for-in': 0,
         'no-loop-func': 0,
-        'no-use-before-define': ['error', {
-            functions: false,
-            classes: false,
-            variables: true,
-        }],
+        'no-use-before-define': [
+            'error',
+            {
+                functions: false,
+                classes: false,
+                variables: true,
+            },
+        ],
         'no-restricted-syntax': ['error', 'WithStatement'],
         'newline-per-chained-call': 0,
         'no-unused-vars': [
             'error',
             {
-                'varsIgnorePattern': '^_',
-                'argsIgnorePattern': '^_',
+                varsIgnorePattern: '^_',
+                argsIgnorePattern: '^_',
             },
-        ]
+        ],
     },
     plugins: ['import'],
 };
