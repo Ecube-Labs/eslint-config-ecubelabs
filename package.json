@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ecubelabs",
-  "version": "13.0.0",
+  "version": "14.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -15,13 +15,13 @@
     "url": "https://github.com/Ecube-Labs/eslint-config-ecubelabs/issues"
   },
   "peerDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0"
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-import": "^2.18.0"
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   }
 }
