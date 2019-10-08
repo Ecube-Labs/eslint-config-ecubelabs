@@ -34,6 +34,7 @@ module.exports = {
         'no-shadow': 0,
         'no-continue': 0,
         'import/no-dynamic-require': 0,
+        'import/order': ['error', { 'newlines-between': 'never' }],
         'guard-for-in': 0,
         'no-loop-func': 0,
         'no-use-before-define': [
