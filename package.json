@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-ecubelabs",
-  "version": "14.2.2",
+  "version": "14.2.4",
   "description": "",
   "main": "index.js",
   "scripts": {
