@@ -34,4 +34,20 @@ const {
 } = ch;
 ```
 
+## [do-not-prefer-default-export](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md#importprefer-default-export)
+```
+// good1.js
+
+// There is a default export.
+export const foo = 'foo';
+const bar = 'bar';
+export default 'bar';
+```
+```
+// good2.js
+
+export const foo = 'foo';
+```
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript#modules--prefer-default-export) 는 default export 를 권고하고 있어서 그 규칙을 그대로 따랐지만 실제로 프로젝트에 적용해보니 모든 프로젝트에서 이 규칙을 예외처리하고 있어서 본 repo 에서도 규칙을 껐습니다.
+
 # };
