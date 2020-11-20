@@ -3,40 +3,20 @@ module.exports = {
         ecmaVersion: 2018,
         sourceType: "module",
     },
-    extends: "airbnb-base",
+    extends: [
+        "airbnb-base",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:jest/recommended",
+        "plugin:jest/style",
+        "plugin:prettier/recommended",
+        "prettier",
+    ],
     env: {
         node: true, // 모든 프로젝트를 node 기반으로 돌리니 항상 허용.
-        jest: true,
+        "jest/globals": true,
     },
     rules: {
-        "max-len": ["error", { code: 120, ignoreComments: true }],
-        // see https://github.com/airbnb/javascript/blob/master/packages/eslint-config-airbnb-base/rules/style.js
-        "object-curly-newline": [
-            "error",
-            {
-                ObjectExpression: {
-                    minProperties: 6,
-                    multiline: true,
-                    consistent: true,
-                },
-                ObjectPattern: {
-                    minProperties: 6,
-                    multiline: true,
-                    consistent: true,
-                },
-                ImportDeclaration: {
-                    minProperties: 6,
-                    multiline: true,
-                    consistent: true,
-                },
-                ExportDeclaration: {
-                    minProperties: 6,
-                    multiline: true,
-                    consistent: true,
-                },
-            },
-        ],
-        indent: ["error", 4, { SwitchCase: 1 }],
         "global-require": 0,
         "no-bitwise": 0,
         "no-underscore-dangle": 0,
@@ -48,8 +28,6 @@ module.exports = {
         "no-plusplus": 0,
         "no-shadow": 0,
         "no-continue": 0,
-        "import/no-dynamic-require": 0,
-        "import/order": ["error", { "newlines-between": "never" }],
         "guard-for-in": 0,
         "no-loop-func": 0,
         "no-use-before-define": [
@@ -61,7 +39,6 @@ module.exports = {
             },
         ],
         "no-restricted-syntax": ["error", "WithStatement"],
-        "newline-per-chained-call": 0,
         "no-unused-vars": [
             "error",
             {
@@ -69,7 +46,14 @@ module.exports = {
                 argsIgnorePattern: "^_",
             },
         ],
+        "max-classes-per-file": "off", // Domain model 정의할 때 하나의 에그리게잇에 포함되는 하위 엔티티를 하나의 파일에 선언하는 경우때문에 허용한다.
+        "import/no-dynamic-require": 0,
+        "import/order": ["error", { "newlines-between": "never" }],
         "import/prefer-default-export": "off",
+        "prettier/prettier": "error",
     },
-    plugins: ["import"],
+    plugins: ["import", "prettier", "jest"],
+    settings: {
+        "prettier/prettier": "error",
+    },
 };
