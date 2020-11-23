@@ -52,7 +52,8 @@ module.exports = {
         "import/prefer-default-export": "off",
         "prettier/prettier": "error",
     },
-    plugins: ["import", "prettier", "jest"],
+    // NOTE: plugin:import는 airbnb-base로부터 상속받는다.
+    plugins: ["prettier", "jest"],
     settings: {
         "prettier/prettier": "error",
     },
