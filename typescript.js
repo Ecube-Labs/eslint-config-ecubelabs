@@ -13,6 +13,15 @@ module.exports = {
                 tsx: 'never',
             },
         ],
+
+        /**
+         * Overrides that the `index.js` rules
+         */
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-use-before-define': [
+            'error',
+            { typedefs: false, functions: false, classes: false, variables: true },
+        ],
     },
     settings: {
         'import/parsers': {

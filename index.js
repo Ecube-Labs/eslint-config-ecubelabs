@@ -4,19 +4,19 @@ module.exports = {
         sourceType: 'module',
     },
     extends: [
-        'airbnb-base',
+        'airbnb-base', // includes plugin: import
         'plugin:import/errors',
         'plugin:import/warnings',
-        'plugin:jest/recommended',
+        'plugin:jest/recommended', // includes plugin: jest
         'plugin:jest/style',
-        'plugin:prettier/recommended',
-        'prettier',
+        'plugin:prettier/recommended', // includes plugin: prettier
     ],
     env: {
         node: true, // 모든 프로젝트를 node 기반으로 돌리니 항상 허용.
         'jest/globals': true,
     },
     rules: {
+        'prettier/prettier': 'error',
         'global-require': 'off',
         'no-bitwise': 'off',
         'no-underscore-dangle': 'off',
@@ -30,14 +30,6 @@ module.exports = {
         'no-continue': 'off',
         'guard-for-in': 'off',
         'no-loop-func': 'off',
-        'no-use-before-define': [
-            'error',
-            {
-                functions: false,
-                classes: false,
-                variables: true,
-            },
-        ],
         'no-restricted-syntax': ['error', 'WithStatement'],
         'no-unused-vars': [
             'error',
@@ -46,14 +38,33 @@ module.exports = {
                 argsIgnorePattern: '^_',
             },
         ],
-        'max-classes-per-file': 'off', // Domain model 정의할 때 하나의 에그리게잇에 포함되는 하위 엔티티를 하나의 파일에 선언하는 경우때문에 허용한다.
         'import/no-dynamic-require': 'off',
         'import/order': ['error', { 'newlines-between': 'never' }],
         'import/prefer-default-export': 'off',
-        'prettier/prettier': 'error',
+        curly: ['error', 'all'], // prettier에 의해 비활성화됨. 무조건 다시 활성화 해야함.
+
+        /**
+         * For DDD
+         */
+        'max-classes-per-file': 'off',
+
+        /**
+         * For test files
+         */
+        'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.*spec.*s', '**/*.*test.*s'] }],
+
+        /**
+         * Overridden in `typescript.js` rules
+         */
+        'no-use-before-define': [
+            'error',
+            {
+                functions: false,
+                classes: false,
+                variables: true,
+            },
+        ],
     },
-    // NOTE: plugin:import는 airbnb-base로부터 상속받는다.
-    plugins: ['prettier', 'jest'],
     settings: {
         'prettier/prettier': 'error',
     },
