@@ -1,60 +1,71 @@
 module.exports = {
     parserOptions: {
         ecmaVersion: 2018,
-        sourceType: "module",
+        sourceType: 'module',
     },
     extends: [
-        "airbnb-base",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:jest/recommended",
-        "plugin:jest/style",
-        "plugin:prettier/recommended",
-        "prettier",
+        'airbnb-base', // includes plugin: import
+        'plugin:import/errors',
+        'plugin:import/warnings',
+        'plugin:jest/recommended', // includes plugin: jest
+        'plugin:jest/style',
+        'plugin:prettier/recommended', // includes plugin: prettier
     ],
     env: {
         node: true, // 모든 프로젝트를 node 기반으로 돌리니 항상 허용.
-        "jest/globals": true,
+        'jest/globals': true,
     },
     rules: {
-        "global-require": 0,
-        "no-bitwise": 0,
-        "no-underscore-dangle": 0,
-        "no-param-reassign": 0,
-        "no-return-await": 0,
-        "no-multi-assign": 0,
-        "no-unused-expressions": 0,
-        "no-throw-literal": 0,
-        "no-plusplus": 0,
-        "no-shadow": 0,
-        "no-continue": 0,
-        "guard-for-in": 0,
-        "no-loop-func": 0,
-        "no-use-before-define": [
-            "error",
+        'prettier/prettier': 'error',
+        'global-require': 'off',
+        'no-bitwise': 'off',
+        'no-underscore-dangle': 'off',
+        'no-param-reassign': 'off',
+        'no-return-await': 'off',
+        'no-multi-assign': 'off',
+        'no-unused-expressions': 'off',
+        'no-throw-literal': 'off',
+        'no-plusplus': 'off',
+        'no-shadow': 'off',
+        'no-continue': 'off',
+        'guard-for-in': 'off',
+        'no-loop-func': 'off',
+        'no-restricted-syntax': ['error', 'WithStatement'],
+        'no-unused-vars': [
+            'error',
+            {
+                varsIgnorePattern: '^_',
+                argsIgnorePattern: '^_',
+            },
+        ],
+        'import/no-dynamic-require': 'off',
+        'import/order': ['error', { 'newlines-between': 'never' }],
+        'import/prefer-default-export': 'off',
+        curly: ['error', 'all'], // prettier에 의해 비활성화됨. 무조건 다시 활성화 해야함.
+
+        /**
+         * For DDD
+         */
+        'max-classes-per-file': 'off',
+
+        /**
+         * For test files
+         */
+        'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.*spec.*s', '**/*.*test.*s'] }],
+
+        /**
+         * Overridden in `typescript.js` rules
+         */
+        'no-use-before-define': [
+            'error',
             {
                 functions: false,
                 classes: false,
                 variables: true,
             },
         ],
-        "no-restricted-syntax": ["error", "WithStatement"],
-        "no-unused-vars": [
-            "error",
-            {
-                varsIgnorePattern: "^_",
-                argsIgnorePattern: "^_",
-            },
-        ],
-        "max-classes-per-file": "off", // Domain model 정의할 때 하나의 에그리게잇에 포함되는 하위 엔티티를 하나의 파일에 선언하는 경우때문에 허용한다.
-        "import/no-dynamic-require": 0,
-        "import/order": ["error", { "newlines-between": "never" }],
-        "import/prefer-default-export": "off",
-        "prettier/prettier": "error",
     },
-    // NOTE: plugin:import는 airbnb-base로부터 상속받는다.
-    plugins: ["prettier", "jest"],
     settings: {
-        "prettier/prettier": "error",
+        'prettier/prettier': 'error',
     },
 };
