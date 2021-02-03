@@ -22,6 +22,9 @@ module.exports = {
             'error',
             { typedefs: false, functions: false, classes: false, variables: true },
         ],
+        // @see https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': ['error'],
     },
     settings: {
         'import/parsers': {
