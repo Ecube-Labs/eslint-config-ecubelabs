@@ -3,16 +3,7 @@
 ## JavaScript
 
 ```bash
-$ npx install-peerdeps eslint-config-ecubelabs -D
-```
-
-## TypeScript
-
-peerDependency는 선택적으로 제공할 수 없기 때문에 추가로 요구하는 의존성 모듈을 설치합니다.
-
-```bash
-$ npx install-peerdeps eslint-config-ecubelabs -D
-$ npm i @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-import-resolver-typescript -D
+$ npm install eslint-config-ecubelabs prettier eslint -D
 ```
 
 # 프로젝트에 적용
